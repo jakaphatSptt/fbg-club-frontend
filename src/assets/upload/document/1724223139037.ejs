@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeatureBG</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <%- include("header") %>
+<!----------------------------- S E C T I O N ----------------------------------->
+<section id="customer-list" class="customer-section ">
+    <div class="list-area ">
+
+        <% customers.forEach(customer=> { %>
+
+        <div id="c<%= customer.cid %>info" class="list-box" name="">
+            
+            <div class="customer-id">
+                <a href="/profile/<%= customer.id %>" target="_blank" ><i class='bx bxs-user-pin' ></i></a>
+                <h4 name="customerId" class="customer_id">
+                    <%= customer.cid %>
+                </h4>
+            </div>
+            
+            <div class="customer-status">
+
+                <h4>PLAY TIME:</h4>
+                <div class="timer">--</div>
+                <h4>CHARGE:</h4>
+                <div class="charge">--</div>
+                
+                <div class="c-btn-area ">
+                    <a id="spc<%= customer.cid %>" class="c-btn clear" href="/clearDate/<%=customer.id %>">
+                        <span>STOP</span>
+                    </a>
+                    <a id="stc<%= customer.cid %>" class="c-btn start" href="/getDate/<%=customer.id %>">
+                        <span>START</span>
+                    </a>
+                </div>
+
+                <span class="cDate hide">
+                    <%= Math.round(customer.date) %>
+                </span>
+
+            </div>
+        </div>
+
+        <% }); %>
+
+        <form id="newCData" class="create-list-box" method="post" action="/new/cid">
+            <button class="new-box" name="cNewBtn" type="submit">
+                <i class='bx bx-plus-circle' ></i>
+                <p>NEW</p>
+            </button>
+        </form>
+
+</section>
+<!------------------------------- S E C T I O N ----------------------------------->
+
+<footer></footer>
+
+<script src="js/script.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+.g-detail-space{
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 0 10rem;
+}
+.g-banner{
+    width: 100%;
+}
+.gd-top{
+    width: 100%;
+    padding: 4rem 0;
+    display: flex;
+    align-items: start;
+}
+.gd-l{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gd-logo{
+    width: 100%;
+    padding: 0 5vw;
+}
+
+.gd-r{
+    min-width: 320px;
+    width: 100%;
+    height: 100%;
+    color: var(--text-color);
+    padding: 2rem 0;
+}
+
+.tag-area{
+    width: 100%;
+}
+.tag-area h3{
+    color: var(--text-color);
+    align-items: start;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.g-tag{
+    display: inline-block;
+    padding: 0 0.4rem 0.2rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin-right: 5px;
+    color: black;
+    background-color: var(--text-color);
+}
+
+.gd-r1{
+    display: flex;
+    gap: 30px;
+    padding: 1rem 0 2rem;
+}
+.gd-r2{
+    color: var(--text-color);
+    font-size: 1.2em;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gd-mid{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr;
+    gap: 20px;
+    padding: 0 4vw;
+}
+.gd-md-1{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    padding: 3rem 0 0;
+    gap: 10px;
+}
+.gd-boxes-img{
+    max-width: 200px;
+}
+.gd-in-fo{
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+}
+.gd-in-fo h4{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize
+}
+.gd-md-2{
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content:start;
+    align-items: center;
+    gap: 5px;
+}
+.gd-md-2 h2{
+    margin-bottom: 10px;
+}
+.gd-video{
+    width: 100%;
+    height: 21.5vw;
+}
+
+.gd-doc{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: rgb(0,0,0,0.3);
+    border-radius: 5px;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.gd-doc:hover{
+    background-color: rgb(0,0,0,0.4);
+}
+.gd-doc-icon{
+    min-width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: 0.2s ease-in-out;
+}
+.gd-doc-text{
+    width: 100%;
+    font-size: 1em;
+    padding-right: 50px;
+    word-wrap: break-word;
+}
+.gd-doc:hover .gd-doc-icon{
+    color: black;
+    background-color: white;
+}
+.gd-doc:hover .gd-doc-text{
+    text-decoration: 2px underline white;
+}
+
+
+@media (max-width: 1200px){}
+@media (max-width: 1000px){
+    .gd-top{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+    .gd-logo{
+        min-width: none;
+        width: 70vw;
+        padding: 0;
+    }
+    .gd-r{
+        padding: 4rem 10vw 0;
+    }
+    
+    .gd-r1{
+        display: flex;
+        gap: 30px;
+    }
+    .gd-r2{
+        color: var(--text-color);
+        font-size: 1.2em;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+    .gd-mid{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 5vw;
+    }
+    .gd-md-1{
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        padding: 0 5vw;
+    }
+    .gd-boxes-img{
+        min-width:100px;
+        width: 100%;
+    }
+    .gd-in-fo{
+        width: 100%;
+    }
+
+    .gd-md-2{
+        width: 100%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content:start;
+        align-items: center;
+        padding: 0;
+        gap: 5px;
+    }
+    .gd-video{
+        height: 50vw;
+    }
+    
+    .gd-doc{
+        width: 100%;
+        display: flex;
+        align-items: start;
+        background-color: rgb(0,0,0,0.3);
+        gap: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+}

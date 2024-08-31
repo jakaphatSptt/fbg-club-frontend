@@ -1,0 +1,131 @@
+
+.top-nav{
+    position: fixed;
+    top: 0;
+    height: 4rem;
+    border: 2px solid transparent;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    z-index: 10;
+    background-color: var(--bg-tb-color);
+    color: var(--text-color);
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-decoration: none;
+    color:aqua;
+}
+.admin-topic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-decoration: none;
+    color:white;
+}
+.admin-nav-menu{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 100px;
+}
+.admin-menu{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 30px;
+    color: var(--text-color);
+    background-color: var(--bg-tb-color);
+    border: 1px solid var(--bg-tb-color);
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+.admin-menu:hover{
+    color: var(--bg-tb-color);
+    background-color: var(--text-color);
+}
+.admin-menu.active{
+    color: var(--bg-tb-color);
+    background-color: var(--main-color);
+}
+.admin-log{
+    padding: 10px 15px;
+    border: 2px solid var(--text-color);
+    border-radius: 10px;
+    background-color: transparent;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+}
+.admin-log:hover{
+    color: var(--bg-tb-color);
+    background-color: var(--text-color) ;
+}
+.topic{
+    font-size: 2rem;
+    text-decoration: none;
+    color:white;
+}
+
+.mid-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    gap: 50px;
+    text-decoration: none;
+}
+
+.mid-li{
+    color: var(--text-color);
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+}
+
+.mid-li:hover{
+    color: var(--main-color);
+}
+
+.end-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-btn{
+    padding: 7px 0;
+    border: 2px solid;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 800;
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.header-hidden{
+    transform: translateY(-100%);
+    transition: 0.2s ease-in-out;
+}
+.header-visible{
+    transform: translateY(0);
+    transition: 0.2s ease-in-out;
+}
+
+.hide{
+    visibility: hidden;
+    display: none;
+}

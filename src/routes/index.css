@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --bg-tb-color:#232D3F;
+  --bg-color: #1e1e1e;
+  --second-bg-color: #555454;
+  --block-color:white;
+  --block-2-color:white;
+  --main-color: #FFB200;
+  --second-color: #936700;
+  --text-color: white;
+  --alert-color:#FF6969;
+  --alert-active-color:#C80036;
+  --allow-color:#06D001;
+  --allow-active-color:#027100;
+  --non-active-color:rgb(175, 175, 175);
+  --banner-color:linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+  --banner-color2:linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+body{
+  background-color: var(--bg-color);
+}
+
+

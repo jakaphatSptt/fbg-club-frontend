@@ -1,0 +1,162 @@
+
+.fx-col{
+    flex-direction: column;
+}
+.fx-row{
+    display: flex;
+    flex-direction: row;
+}
+.g-wh{
+    width: 220px;
+    height: 300px;
+}
+.f-wh{
+    width: 100%;
+    height: 100%;
+}
+
+.games-list{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.games-list-2{
+    width: 220px;
+}
+
+
+.game-frame{
+    width: 100%;
+    height: 260px;
+    position: relative;
+    border: none;
+    border-bottom: 3px dashed;
+    display: flex;
+    overflow: hidden;
+    background-color: var(--block-color);
+    border-radius: 20px 20px 0px 0px ;
+}
+
+.game-id{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--non-active-color);
+    background-size: cover;
+}
+.img-logo{
+    width: 90%;
+}
+.img-boxes{
+    width: 80px;
+    line-height: 0;
+}
+.g-title{
+    text-align: center;
+    font-size: 1.2em;
+    padding: 5px 0;
+    text-transform: capitalize
+}
+.g-mid{
+    padding: 0 1.5rem;
+}
+.sm-2{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1em;
+    font-weight: 700;
+}
+.g-tags{
+    width: 100%;
+    padding: 0.5rem 0 0;
+}
+.tags{
+    display: inline-block;
+    border-radius: 5px;
+    padding: 1px 5px 3px;
+    border: 1px solid;
+    line-height: 1;
+}
+.bt-frame{
+    width: 100%;
+    height: 55px;
+    background-color: var(--block-2-color);
+    color: var(--bg-color);
+    font-size: 2em;
+    font-weight: 700;
+    padding: 0 0 4px;
+    border: none;
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.1s ease-in-out;
+    text-decoration: none ;
+}
+.bt-frame:hover{
+    transform: translateY(5px);
+}
+.bt-frame:active{
+    transform: translateY(10px);
+}
+.start{
+    color: var(--non-active-color);
+}
+.bt-frame:hover .start{
+    color: black;
+}
+.clear{
+    color: var(--bg-color);
+}
+.bt-frame:hover .clear{
+    color: var(--alert-color);
+}
+.bt-frame:active .clear{
+    color: var(--alert-active-color)
+}
+
+.game-btn{
+    padding: 1em 0 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+.btn-3{
+    height: 40px;
+    width: 60px;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 0 0 2px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.del{
+    background-color: var(--alert-color);
+    color: var(--alert-active-color);
+    transition: 0.3s ease-in-out;
+}
+.del:hover{
+    background-color: var(--alert-active-color);
+    color: var(--alert-color);
+}
+.del:active{
+    transform: scale(0.9);
+}
+.edit{
+    background-color: var(--allow-color);
+    color: var(--allow-active-color);
+    transition: 0.3s ease-in-out;
+}
+.edit:hover{
+    background-color: var(--allow-active-color);
+    color: var(--allow-color);
+}
+.edit:active{
+    transform: scale(0.9);
+}

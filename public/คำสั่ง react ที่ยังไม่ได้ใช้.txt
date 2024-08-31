@@ -1,0 +1,23 @@
+1.ปุ่มกดย้อนกลับ
+import { Link,useNavigate } from 'react-router-dom';
+function Nav(){
+    const navigate = useNavigate()
+     return(
+        <>
+        <nav>
+            <Link onClick={()=> navigate(-1)} >Back</Link>
+        </nav>
+        </>
+
+     )
+}
+
+2.ใช้ axios รับ api แบบเบสิก
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    axios.get('http://localhost:4000/api/customers')
+      .then((response) => {
+        setData(response.data)
+      })  
+  },[])
