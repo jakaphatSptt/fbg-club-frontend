@@ -11,7 +11,7 @@ function Games() {
   useEffect(()=>{
     const callApi =async()=> {
       try {
-        await axios.get('http://localhost:4000/api/boardgames')
+        await axios.get('https://fbgc-backend.onrender.com/api/boardgames')
         .then((res)=>{
           setData(res.data)
         })

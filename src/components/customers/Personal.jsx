@@ -29,8 +29,8 @@ function Personal() {
 
     const fetchData = async () => {
       try {
-        const customer = await axios.get(`http://localhost:4000/api/customer/${id}`)
-        const prices = await axios.get('http://localhost:4000/api/prices')
+        const customer = await axios.get(`https://fbgc-backend.onrender.com/api/customer/${id}`)
+        const prices = await axios.get('https://fbgc-backend.onrender.com/api/prices')
         setData(customer.data)
         setPrice(prices.data[0])
       } catch (error) {

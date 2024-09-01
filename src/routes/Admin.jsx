@@ -31,9 +31,9 @@ function Admin(){
 
   const fetchData = async () => {
     try {
-      const customers = await axios.get('http://localhost:4000/api/customers')
-      const games = await axios.get('http://localhost:4000/api/boardgames')
-      const prices = await axios.get('http://localhost:4000/api/prices')
+      const customers = await axios.get('https://fbgc-backend.onrender.com/api/customers')
+      const games = await axios.get('https://fbgc-backend.onrender.com/api/boardgames')
+      const prices = await axios.get('https://fbgc-backend.onrender.com/api/prices')
       setCustomersData(customers.data)
       setGamesData(games.data)
       setPrice(prices.data[0])
@@ -84,7 +84,7 @@ function Admin(){
   const confirmCreate = async () => {
     try {
       setShowPopup(true)
-      await axios.post('http://localhost:4000/api/create/new-customer')
+      await axios.post('https://fbgc-backend.onrender.com/api/create/new-customer')
       await fetchData()
     } catch (error) {
       console.error('error na',error)
@@ -93,7 +93,7 @@ function Admin(){
 
   const handleDelLastCid = async() =>{
     try {
-      await axios.delete('http://localhost:4000/api/delete/last-customer')
+      await axios.delete('https://fbgc-backend.onrender.com/api/delete/last-customer')
       .then((res)=>{ console.log(res.data)})
       await fetchData()
     } catch (error) {
@@ -118,7 +118,7 @@ function Admin(){
   const confirmDelGame =async()=>{
     const gid = apiData.api
     try {
-      await axios.delete(`http://localhost:4000/api/game/delete/${gid}`)
+      await axios.delete(`https://fbgc-backend.onrender.com/api/game/delete/${gid}`)
       .then((res)=>{ console.log(res.data)})
       await fetchData()
       setShowPopup(true)
@@ -173,8 +173,8 @@ function Admin(){
   const lastCid = `c${String(customersData.length).padStart(3,'0')}`
 
   const customersContent = customersData.map((e)=>{
-    const getDate = ()=> { ToggleDate(`http://localhost:4000/api/getDate/${e._id}`,e.cid,e.dateB,e.startTime,'active','เริ่ม') }
-    const clearDate = ()=> { ToggleDate(`http://localhost:4000/api/clearDate/${e._id}`,e.cid,e.dateB,e.startTime,'inactive','หยุด') }
+    const getDate = ()=> { ToggleDate(`https://fbgc-backend.onrender.com/api/getDate/${e._id}`,e.cid,e.dateB,e.startTime,'active','เริ่ม') }
+    const clearDate = ()=> { ToggleDate(`https://fbgc-backend.onrender.com/api/clearDate/${e._id}`,e.cid,e.dateB,e.startTime,'inactive','หยุด') }
     return <Customers {...e} key={e._id} 
               getDate={getDate} 
               clearDate={clearDate}

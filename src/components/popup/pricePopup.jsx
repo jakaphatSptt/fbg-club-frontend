@@ -33,7 +33,7 @@ export default function Price(props) {
 
   const handleUpdate = async() =>{
     try {
-      await axios.put('http://localhost:4000/api/prices/update',input)
+      await axios.put('https://fbgc-backend.onrender.com/api/prices/update',input)
       /// โชว์หน้า setShowPopup(true) 
     } catch (error) {
       console.error('error',error)
@@ -45,7 +45,7 @@ export default function Price(props) {
   useEffect(()=>{
     const priceApi = async()=>{
       try {
-        const res = await axios.get('http://localhost:4000/api/prices')
+        const res = await axios.get('https://fbgc-backend.onrender.com/api/prices')
         setInput(res.data[0])
       } catch (error) {
         console.log(error)

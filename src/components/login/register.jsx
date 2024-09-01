@@ -12,7 +12,7 @@ export default function Register() {
       evt.preventDefault() 
       try {
         console.log( username, password)
-        await axios.post('http://localhost:4000/api/register',{ username, password })
+        await axios.post('https://fbgc-backend.onrender.com/api/register',{ username, password })
         // localStorage.setItem('token', res.data.token)
         // navigate('/admin/customers')
       } catch (error) {

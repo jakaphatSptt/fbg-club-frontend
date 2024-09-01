@@ -15,7 +15,7 @@ export default function Login() {
     const handleLogin = async(evt)=>{
       evt.preventDefault() 
       try {
-        const res = await axios.post('http://localhost:4000/api/login',{ username, password })
+        const res = await axios.post('https://fbgc-backend.onrender.com/api/login',{ username, password })
           localStorage.setItem('token', res.data.token)
           navigate('/admin/customers')
           console.log('welcome')

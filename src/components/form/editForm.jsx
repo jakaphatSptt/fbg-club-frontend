@@ -21,12 +21,12 @@ function EditForm() {
   useEffect(()=>{
     const getGame =async()=>{
       try {
-        const res = await axios.get(`http://localhost:4000/api/boardgame/${id}`)
+        const res = await axios.get(`https://fbgc-backend.onrender.com/api/boardgame/${id}`)
         setGame(res.data[0])
         setPreviews({
-          logo: `http://localhost:4000/upload/images/${res.data[0].logo}`,
-          boxes: `http://localhost:4000/upload/images/${res.data[0].boxes}`,
-          banner: `http://localhost:4000/upload/images/${res.data[0].banner}`
+          logo: `https://fbgc-backend.onrender.com/uploads/images/${res.data[0].logo}`,
+          boxes: `https://fbgc-backend.onrender.com/uploads/images/${res.data[0].boxes}`,
+          banner: `https://fbgc-backend.onrender.com/uploads/images/${res.data[0].banner}`
         })
       } catch (error) {
         console.error('error',error)
@@ -58,7 +58,7 @@ function EditForm() {
   const handleSubmit =async(evt)=>{
     evt.preventDefault()
 
-    const url = `http://localhost:4000/api/game/${id}/update`
+    const url = `https://fbgc-backend.onrender.com/api/game/${id}/update`
     const form = new FormData()
     const config = { headers: { 'content-type': 'multipart/form-data' }}
     

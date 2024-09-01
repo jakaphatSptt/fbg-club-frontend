@@ -14,7 +14,7 @@ function CustomerManage (props) {
     useEffect(()=>{
         const getPrice = async()=>{
             try {
-                const res = await axios.get('http://localhost:4000/api/prices')
+                const res = await axios.get('https://fbgc-backend.onrender.com/api/prices')
                 setPrice(res.data[0])
             } catch (error) {
                 console.error('error', error)

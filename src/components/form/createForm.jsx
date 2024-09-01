@@ -41,7 +41,7 @@ function CreateForm() {
   const handleSubmit =async(evt)=>{
     evt.preventDefault()
 
-    const url = 'http://localhost:4000/api/create/new-game'
+    const url = 'https://fbgc-backend.onrender.com/api/create/new-game'
     const form = new FormData()
     const config = { headers: { 'content-type': 'multipart/form-data' }}
     

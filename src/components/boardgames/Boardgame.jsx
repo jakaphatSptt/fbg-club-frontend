@@ -29,7 +29,7 @@ function BoardGame() {
   useEffect(()=>{
     const fetchData = async () =>{
       try {
-        const res = await axios.get(`http://localhost:4000/api/boardgame/${id}`)
+        const res = await axios.get(`https://fbgc-backend.onrender.com/api/boardgame/${id}`)
         const gameData = res.data[0]
         setGame(gameData)
       } catch (error) {
