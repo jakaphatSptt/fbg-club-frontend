@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link,useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { HiUsers } from "react-icons/hi";
 import { IoMdTime } from "react-icons/io";
@@ -53,9 +53,9 @@ function BoardGame() {
 
   console.log(game.logo)
 
-  const logo = `http://localhost:4000/upload/images/${game.logo}`
-  const boxes = `http://localhost:4000/upload/images/${game.boxes}`
-  const banner = `http://localhost:4000/upload/images/${game.banner}`
+  const logo = `https://fbgc-backend.onrender.com/uploads/images/${game.logo}`
+  const boxes = `https://fbgc-backend.onrender.com/uploads/images/${game.boxes}`
+  const banner = `https://fbgc-backend.onrender.com/uploads/images/${game.banner}`
 
   console.log(youtube)
 
@@ -113,14 +113,14 @@ function BoardGame() {
 
             {game.docFiles.length !== 0? 
               game.docFiles.map((e)=>{
-              const file = `http://localhost:4000/upload/document/${e.doc}`
+              const fileUrl = `https://fbgc-backend.onrender.com/uploads/docs/${e.doc}`
               return(
-                <Link to={file} download={e.doc} className='gd-doc' key={e._id} >
+                <a href={fileUrl} download target="_blank" className='gd-doc' key={e._id} >
                   <div className='gd-doc-icon'>
                     <span><IoDocumentTextSharp /></span> 
                   </div>
                   <div className='gd-doc-text'  >{e.doc}</div>
-                </Link>
+                </a>
               )})
               :
               <div className='gd-doc' onClick={()=> console.log(game.docFiles)}> 
