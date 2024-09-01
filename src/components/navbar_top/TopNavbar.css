@@ -39,7 +39,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
     font-size: 30px;
     color: var(--text-color);
     background-color: var(--bg-tb-color);
@@ -128,4 +127,22 @@
 .hide{
     visibility: hidden;
     display: none;
+}
+
+@media(max-width: 678px){
+    .admin-topic{
+        font-size: 1.5rem;
+    }
+    .admin-nav-menu{
+        margin-right: 40px;
+    }
+}
+
+@media(max-width: 480px){
+    .admin-topic{
+        font-size: 1.2rem;
+    }
+    .admin-nav-menu{
+        margin-right: 10px;
+    }
 }

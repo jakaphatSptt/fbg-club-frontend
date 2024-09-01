@@ -11,7 +11,7 @@ function game() {
     <>
       {token? <NavbarAdmin prev={prev}/>:<Navbar/>}
       <BoardGame/>
-      <Footer/>
+      {token? null:<Footer/>}
     </>
   )
 }

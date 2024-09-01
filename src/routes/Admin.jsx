@@ -6,7 +6,6 @@ import BtNav from '../components/navbar_bottom/BtNavbar'
 import Container from '../components/Container/Container'
 import Customers from '../components/customers/CustomerManage'
 import Games from '../components/boardgames/BoardgamesList'
-import DelEdit from '../components/boardgames/DelEdit'
 import ConfirmPopup from '../components/popup/confirmPopup'
 import ResultPopup from '../components/popup/resultPopup'
 import Loading from '../components/popup/loading'
@@ -101,32 +100,6 @@ function Admin(){
     }
   }
 
-  const handleDelGame = (gid,title) =>{
-    setApiData({
-      topic:`กำลังลบ ${title}`,
-      message:`ต้องการลบ ${gid} ออกจากรายการ`,
-      action: 'delGame',
-      api: gid
-    })
-    setPopup({
-      topic:`ลบเกมสำเร็จ`,
-      message:`ทำการลบ ${title} ออกจากรายการแล้ว`
-    })
-    setConfirmPopup(true)
-  }
-
-  const confirmDelGame =async()=>{
-    const gid = apiData.api
-    try {
-      await axios.delete(`https://fbgc-backend.onrender.com/api/game/delete/${gid}`)
-      .then((res)=>{ console.log(res.data)})
-      await fetchData()
-      setShowPopup(true)
-    } catch (error) {
-      console.error('error',error)
-    }
-  }
-
   const ToggleDate = (url,cid,dateB,startTime,status,text)=> {
     const cal = calculatorTime(dateB,price)
     const pad = (num) => String(num).padStart(2,'0');
@@ -184,7 +157,7 @@ function Admin(){
   return(
     <>
       <Navbar topic={navTopic} action={action} afterMenuSubmit={handleDelLastCid} lastCid={lastCid}/>
-      <Container content={ <Outlet context={{ customersData, gamesData , customersContent, handleDelGame }}/> }/>
+      <Container content={ <Outlet context={{ customersData, gamesData , customersContent }}/> }/>
       <BtNav create={handleCreate} />
       
       {showLoading&&(<Loading/>)}
@@ -200,8 +173,6 @@ function Admin(){
               confirmCreate()
             }if(apiData.action===`putData`){
               confirmDate()
-            }if(apiData.action===`delGame`){
-              confirmDelGame()
             }
           }}
         />
@@ -233,11 +204,11 @@ function AdCustomers() {
 }
 
 function AdGames() {
-  const { gamesData, handleDelGame } = useOutletContext()
+  const { gamesData } = useOutletContext()
   return (
     <>
       {gamesData.map((e)=> 
-        <Games {...e} key={e._id} manage={<DelEdit {...e} key={e._id} delGame={handleDelGame} />} />
+        <Games {...e} key={e._id}  />
         )}
     </>
   )

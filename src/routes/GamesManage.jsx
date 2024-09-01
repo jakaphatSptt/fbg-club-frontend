@@ -2,7 +2,6 @@ import Navbar from '../components/navbar_top/TopNavAdmin'
 import BtNav from '../components/navbar_bottom/BtNavbar'
 import Container from '../components/Container/Container'
 import BoardgamesList from '../components/boardgames/BoardgamesList'
-import DelEdit from '../components/boardgames/DelEdit'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useState,useEffect } from 'react'
@@ -29,7 +28,7 @@ function GamesManage() {
   },[])
 
   const content = data.map((e)=>{
-    return <BoardgamesList {...e} key={e._id} manage={<DelEdit {...e} key={e._id}/>}/>
+    return <BoardgamesList {...e} key={e._id} />
   })
   
   return (

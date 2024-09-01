@@ -69,7 +69,8 @@
 
 @media(max-width: 480px){
     .container{
-        padding: 1rem 0 5rem;
+        margin: 4rem 0 0;
+        padding: 1rem 0 4rem;
         row-gap: 2vw;
     }
     .list{
@@ -79,7 +80,6 @@
 }
 
 @media(max-width: 400px){
-
 }
 
 @media(max-width: 360px){

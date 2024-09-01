@@ -11,7 +11,7 @@ function Customer() {
     <>
       {token? <NavbarAdmin prev={prev}/>:<Navbar/> }
       <Personal/>
-      <Footer/>
+      {token? null:<Footer/>}
     </>
   )
 }

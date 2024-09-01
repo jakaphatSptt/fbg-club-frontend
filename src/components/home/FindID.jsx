@@ -55,7 +55,7 @@ function FindID()  {
 
   useEffect(()=> {
     const getData = async() =>{
-      const res = await axios.get('http://localhost:4000/api/customers')
+      const res = await axios.get('https://fbgc-backend.onrender.com/api/customers')
       setCData(res.data)
     }
     getData()

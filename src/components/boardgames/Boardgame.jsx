@@ -7,6 +7,7 @@ import { IoDocumentTextSharp } from "react-icons/io5";
 import { AiFillFileExcel } from "react-icons/ai";
 import './Boardgame.css'
 import Loading from '../popup/loading';
+import DelEdit from './DelEdit'
 import { convertYTLink } from '../../hook/convertYTLink';
 
 function BoardGame() {
@@ -14,17 +15,10 @@ function BoardGame() {
     title:'', community:'', playingTime:'', tags:[{ tag: null }], price:'', content:'', 
     logo:'', boxes:'', banner:'', videoLink:'', docFiles:[{ doc: null }]
   })
+  const token = localStorage.getItem('token')
   const [ youtube,setYoutube ] = useState('')
   const [ loading,setLoading ] = useState(true)
   const { id } = useParams()
-
-  // const getImages =async()=>{
-  //   try {
-  //     const res = await 
-  //   } catch (error) {
-  //     console.error('error',error)
-  //   }
-  // }
 
   useEffect(()=>{
     const fetchData = async () =>{
@@ -64,9 +58,11 @@ function BoardGame() {
       className="g-detail-space" 
       style={{backgroundImage:`var(--banner-color2), url(${banner})`}} 
     >
-    
-      <div className="g-banner">
+      
+    { token? <DelEdit title={game.title} gid={game.gid}/>: null}
 
+      <div className="g-banner">
+        
         <div className="gd-top">
           <div className="gd-l">
             <img

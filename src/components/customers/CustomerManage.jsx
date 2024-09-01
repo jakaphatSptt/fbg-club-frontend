@@ -67,7 +67,7 @@ function CustomerManage (props) {
                     </Link>
                 </div>
 
-                 <div className="start-time">
+                <div className="start-time">
                     <h4 className="st-date">START: {startTime}</h4>
                 </div>
                 
@@ -75,11 +75,11 @@ function CustomerManage (props) {
                     <h4 className={`di-ti`}>PLAYTIME:</h4>
                     <div>{h}:{m}:{s}</div>
                 </div>
+                
                 <div className="display">
                     <h4 className="di-ti">SERVICE CHARGE:</h4>
                     <div><span className='sym'>฿</span>{charge} </div>
                 </div>
-                <div className="c-date"> {dateB}</div>
             </div>
 
             <div onClick={toggle} className={`set-btn ${classB}`}>

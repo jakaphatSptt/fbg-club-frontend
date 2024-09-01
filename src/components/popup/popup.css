@@ -11,7 +11,7 @@
     z-index: 1000;
 }
 .popup{
-    min-width: 300px;
+    max-width: 100vw;
     background: white;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -19,17 +19,17 @@
 }
 .pu-topic{
     color: black;
-    padding: 20px 50px 0;
+    padding: 20px 40px 0;
 }
 .pu-content{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 20px 50px;
+    padding: 15px 40px;
 }
 .pop-btn-area{
     width: 100%;
-    padding: 20px 50px;
+    padding: 15px 40px;
     display: flex;
     justify-content: center;
     gap: 20px;

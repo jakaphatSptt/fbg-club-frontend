@@ -1,10 +1,12 @@
 import './Boardgames.css'
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { HiUsers } from "react-icons/hi";
 import { IoMdTime } from "react-icons/io";
 
 function Boardgames(props) {
-    const { gid, title, community, playingTime, tags, logo, banner, manage} = props
+    const { gid, title, community, playingTime, tags, logo, banner } = props
+
+    const navigate = useNavigate()
 
     const gameTags = tags.map((e)=>{
         return <div className="tags" key={e._id}>{e.tag}</div>
@@ -17,7 +19,7 @@ function Boardgames(props) {
     <div className="games-list">
         <div className="games-list-2">
 
-            <div className="game-frame fx-col g-wh">
+            <div onClick={()=> navigate(`/game/${gid}`)} className="game-frame">
                 <div className="game-id" 
                      style={ {backgroundImage:`var(--banner-color), url(${gameBanners})`} }>
                     <img src={gameLogo} className="img-logo" alt="game-logo" />
@@ -38,11 +40,6 @@ function Boardgames(props) {
                 </div>
                 
             </div>
-
-            <Link to={`/game/${gid}`} className="bt-frame">CLICKS</Link>
-
-            { manage }
-
         </div>
 
     </div>
