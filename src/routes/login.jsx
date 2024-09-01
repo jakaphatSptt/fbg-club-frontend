@@ -30,7 +30,7 @@ export default function Login() {
     <div className='login-overlay'>
 
       <div className='main-area-0'>
-        <h2 className="login-logo">Logo</h2>
+        <h2 className="login-logo">FBG</h2>
 
         <div className="main-area-1">
           <div className="navbar-area-2">

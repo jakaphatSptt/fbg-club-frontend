@@ -6,7 +6,7 @@ function Nav(){
         <>
         <nav className="top-nav">
 
-            <div className='logo'>LOGO</div>
+            <div className='logo'>FBG</div>
 
             <div className='mid-nav'>
                 <Link to="/" className='mid-li'>Home</Link>
