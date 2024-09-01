@@ -24,7 +24,7 @@ function TopNavAdmin(props) {
 
   return (
     <nav className="top-nav">
-      <h2 className="logo">LOGO</h2>
+      <h2 className="logo">FBG</h2>
       <h2 className='admin-topic'>{topic}</h2>
 
       <div className='admin-nav-menu'>

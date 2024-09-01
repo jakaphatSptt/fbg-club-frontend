@@ -200,3 +200,15 @@ div.r-src-d{ transform: translate(172px,-76px); }
     line-height: 0;
     transform: translateY(-49px);
 }
+
+@media(max-width: 430px){
+    .main-mid-area{
+        transform: scale(0.9);
+    }
+}
+
+@media(max-width: 390px){
+    .main-mid-area{
+        transform: scale(0.8);
+    }
+}

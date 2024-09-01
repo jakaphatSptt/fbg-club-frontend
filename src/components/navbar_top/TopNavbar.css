@@ -83,6 +83,7 @@
     justify-content: center;
     align-items: center;
     font-size: 1.2em;
+    font-weight: 700;
     gap: 50px;
     text-decoration: none;
 }
@@ -144,5 +145,25 @@
     }
     .admin-nav-menu{
         margin-right: 10px;
+    }
+
+    .mid-nav{
+        font-size: 1.1rem;
+        gap: 20px;
+    }
+}
+
+@media(max-width: 400px){
+    .mid-nav{
+        font-size: 1rem;
+        gap: 15px;
+    }
+}
+
+@media(max-width: 360px){
+    .mid-nav{
+        font-size: 1rem;
+        font-weight: 500;
+        gap: 15px;
     }
 }
