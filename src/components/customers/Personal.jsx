@@ -72,45 +72,9 @@ function Personal() {
 
   const active = data.dateB? 'กำลังใช้งาน':'ไม่ได้ใช้งาน'
 
-  const renderLoading = showLoading&&(
-    <Loading/>
-  )
-
-  const renderPopup = showPopup&&(
-    <Popup
-    topic={`ค่าบริการ`}
-    message={
-      <>
-      <div className="pu-3">
-        <h3>ชั่วโมงที่ 1</h3>
-        <h2>{price.hrs1}</h2>
-        <h3>บาท</h3>
-      </div>
-      <div className="pu-3">
-        <h3>ชั่วโมงที่ 2</h3>
-        <h2>{price.hrs2}</h2>
-        <h3>บาท</h3>
-      </div>
-      <div className="pu-3">
-        <h3>ชั่วโมงที่ 3</h3>
-        <h2>{price.hrs3}</h2>
-        <h3>บาท</h3>
-      </div>
-      <div className="pu-3">
-        <h3>ชั่วโมงที่ 4</h3>
-        <h2>{price.hrs4}</h2>
-        <h3>บาท</h3>
-      </div>
-      <div className="pu-3">
-        <h3>5 ชม.ขึ้นไป</h3>
-        <h2>{price.hrs5}</h2>
-        <h3>บาท</h3>
-      </div>
-      </>
-    }
-    closeBtn={()=>{ setShowPopup(false)}}
-    />
-  )
+  const pad = (num) => String(num).padStart(2,'0');
+  const dateC = new Date(data.date)
+  const [sh,sm] = [ pad(dateC.getHours()), pad(dateC.getMinutes()) ]
 
   return (
     <>
@@ -160,8 +124,8 @@ function Personal() {
           
           <div className="st-at">
             <h5>เวลาเริ่มต้น</h5>
-            <p className="stTimer">{data.startTime} น.</p>
-            <span className="stDate">{data.startMDY}</span>
+            <p className="stTimer">{`${sh}:${sm}`} น.</p>
+            <span className="stDate"></span>
 
             <div className="rb-1">
               <div className="paid-area">
@@ -212,10 +176,44 @@ function Personal() {
       </div>
 
     </div>
-    {renderLoading}
-    {renderPopup}
+    {showLoading&&(<Loading/>)}
+    {showPopup&&(<Popup
+      topic={`ค่าบริการ`}
+      message={
+        <>
+          <div className="pu-3">
+            <h3>ชั่วโมงที่ 1</h3>
+            <h2>{price.hrs1}</h2>
+            <h3>บาท</h3>
+          </div>
+          <div className="pu-3">
+            <h3>ชั่วโมงที่ 2</h3>
+            <h2>{price.hrs2}</h2>
+            <h3>บาท</h3>
+          </div>
+          <div className="pu-3">
+            <h3>ชั่วโมงที่ 3</h3>
+            <h2>{price.hrs3}</h2>
+            <h3>บาท</h3>
+          </div>
+          <div className="pu-3">
+            <h3>ชั่วโมงที่ 4</h3>
+            <h2>{price.hrs4}</h2>
+            <h3>บาท</h3>
+          </div>
+          <div className="pu-3">
+            <h3>5 ชม.ขึ้นไป</h3>
+            <h2>{price.hrs5}</h2>
+            <h3>บาท</h3>
+          </div>
+        </>
+      }
+      closeBtn={()=>{ setShowPopup(false)}}
+    />
+    )}
 
     </div>
+    
     </>
   )
 }

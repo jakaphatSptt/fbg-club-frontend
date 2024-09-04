@@ -6,7 +6,7 @@ import './CustomerManage.css'
 import formatTime from '../../hook/formatTime'
 
 function CustomerManage (props) {
-    const {_id,cid,startTime,dateB, getDate, clearDate} = props
+    const {_id,cid,dateB, getDate, clearDate} = props
     const [timeDiff,setTimeDiff] = useState([])
     const [charge, setCharge] = useState('0')
     const [price,setPrice] = useState({})
@@ -54,6 +54,10 @@ function CustomerManage (props) {
     const m = timeDiff? ft.split(':')[1]:'00'
     const s = timeDiff? ft.split(':')[2]:'00'
 
+    const pad = (num) => String(num).padStart(2,'0');
+    const dateC = new Date(dateB)
+    const [sh,sm] = [ pad(dateC.getHours()), pad(dateC.getMinutes()) ]
+
     return(
     <div className="customers-list">
 
@@ -68,7 +72,7 @@ function CustomerManage (props) {
                 </div>
 
                 <div className="start-time">
-                    <h4 className="st-date">START: {startTime}</h4>
+                    <h4 className="st-date">START: {dateB? `${sh}:${sm}`:null }</h4>
                 </div>
                 
                 <div className="display">

@@ -103,6 +103,8 @@ function Admin(){
   const ToggleDate = (url,cid,dateB,startTime,status,text)=> {
     const cal = calculatorTime(dateB,price)
     const pad = (num) => String(num).padStart(2,'0');
+    const dateC = new Date(dateB)
+    const [sh,sm] = [ pad(dateC.getHours()), pad(dateC.getMinutes()) ]
     const [h,m] = [ pad(new Date().getHours()), pad(new Date().getMinutes()) ]
     const sec1 = `${cal.mins} นาที`
     const sec2 = `${cal.hrs} ชม. ${cal.mins} นาที `
@@ -124,7 +126,7 @@ function Admin(){
     }else if(status==='inactive'){
       setPopup({
         topic:`ลูกค้า ${cid} ${text}ใช้บริการแล้ว`,
-        p1:(<> <p> เวลาที่เริ่มใช้บริการ</p> <h3>{`${startTime} น.`}</h3> <br/> </>),
+        p1:(<> <p> เวลาที่เริ่มใช้บริการ</p> <h3>{`${sh}:${sm} น.`}</h3> <br/> </>),
         p2:(<> <p>เวลาที่หยุดใช้บริการ</p> <h3>{`${h}:${m} น.`}</h3> <br /> </>),
         p3:(<> <p>เวลาที่ทั้งหมดที่เล่น</p> <h3>{playTime}</h3> </>),
         result:(<> <h3>ค่าบริการ</h3> <h2>{cal.charge}</h2> <h3>บาท</h3> </>)
