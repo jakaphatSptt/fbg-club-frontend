@@ -47,9 +47,9 @@ function BoardGame() {
 
   console.log(game.logo)
 
-  const logo = `https://fbgc-backend.onrender.com/uploads/images/${game.logo}`
-  const boxes = `https://fbgc-backend.onrender.com/uploads/images/${game.boxes}`
-  const banner = `https://fbgc-backend.onrender.com/uploads/images/${game.banner}`
+  const logo = `${game.logo}`
+  const boxes = `${game.boxes}`
+  const banner = `${game.banner}`
 
   console.log(youtube)
 
@@ -104,18 +104,19 @@ function BoardGame() {
             </div>
           </div>
 
-          <div className="gd-md-2">
+          <div className="gd-md-2 doc">
             <h2>Docs</h2>
 
             {game.docFiles.length !== 0? 
               game.docFiles.map((e)=>{
-              const fileUrl = `https://fbgc-backend.onrender.com/uploads/docs/${e.doc}`
+              const fileUrl = `${e.doc}`
+              const fileName = `${e.doc? e.doc.split('/')[5] : ''}`
               return(
                 <a href={fileUrl} download target="_blank" className='gd-doc' key={e._id} >
                   <div className='gd-doc-icon'>
                     <span><IoDocumentTextSharp /></span> 
                   </div>
-                  <div className='gd-doc-text'  >{e.doc}</div>
+                  <div className='gd-doc-text' >{fileName}</div>
                 </a>
               )})
               :

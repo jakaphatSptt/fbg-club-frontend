@@ -24,9 +24,9 @@ function EditForm() {
         const res = await axios.get(`https://fbgc-backend.onrender.com/api/boardgame/${id}`)
         setGame(res.data[0])
         setPreviews({
-          logo: `https://fbgc-backend.onrender.com/uploads/images/${res.data[0].logo}`,
-          boxes: `https://fbgc-backend.onrender.com/uploads/images/${res.data[0].boxes}`,
-          banner: `https://fbgc-backend.onrender.com/uploads/images/${res.data[0].banner}`
+          logo: `${res.data[0].logo}`,
+          boxes: `${res.data[0].boxes}`,
+          banner: `${res.data[0].banner}`
         })
       } catch (error) {
         console.error('error',error)

@@ -12,8 +12,8 @@ function Boardgames(props) {
         return <div className="tags" key={e._id}>{e.tag}</div>
     })
 
-    const gameLogo = `https://fbgc-backend.onrender.com/uploads/images/${logo}`
-    const gameBanners = `https://fbgc-backend.onrender.com/uploads/images/${banner}`
+    const gameLogo = `${logo}`
+    const gameBanners = `${banner}`
 
   return (
     <div className="games-list">
